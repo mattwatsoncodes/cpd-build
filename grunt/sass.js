@@ -1,16 +1,18 @@
+// Sass Task - https://github.com/sindresorhus/grunt-sass
+// ----------------------------------------------------------------------------
 module.exports = {
-
-    sass: {
-        options: {
-            sourcemap: true,
-            style: 'compressed'
-        },
-        files: [{
-            expand: true,
-            cwd: 'assets/scss',
-            src: ['*.scss'],
-            dest: 'assets/css',
-            ext: '.css'
-        }]
-    }
+  // Generate CSS from our Sass files
+  sass: {
+    options: {
+      // sourcemap: true,
+      style: 'compressed'
+    },
+    files: [ {
+      expand: true,
+      cwd: '<%= siteInfo.assets_path %>/<%= siteInfo.sass_dir %>',
+      src: [ '*.scss' ],
+      dest: '<%= siteInfo.assets_path %>/<%= siteInfo.css_dir %>',
+      ext: '.css'
+    } ]
+  }
 };

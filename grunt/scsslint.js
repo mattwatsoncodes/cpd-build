@@ -1,14 +1,21 @@
+// Sass Lint Task - https://github.com/ahmednuaman/grunt-scss-lint
+// ----------------------------------------------------------------------------
 module.exports = {
-
-    options: {
-      bundleExec: false, // should be true once bundler for is being used for installing gems as part the workflow
-      compact: true,
-      force: true,
-      reporterOutput: 'reports/scsslint-report.xml',
-      colorizeOutput: true,
-      config: null
-    },
-    src: [
-      'assets/scss/**/*.scss',
-    ]
+  // Lint our SCSS files
+  options: {
+    // Change to true once using bundler for gem installs
+    bundleExec: false,
+    // Silences errors in the console
+    emitError: true,
+    // Continue with the build regardless of errors
+    force: true,
+    // Output the errors to file
+    config: 'grunt/config/scsslint.yml',
+    reporterOutput: '<%= siteInfo.reports_path %>/scsslint.xml',
+    colorizeOutput: true,
+    compact: true,
+  },
+  scss: [
+    '<%= siteInfo.assets_path %>/<%= siteInfo.sass_dir %>/**/*.scss',
+  ]
 };

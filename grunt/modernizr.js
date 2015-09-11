@@ -1,25 +1,24 @@
+// Modernizr Task - https://github.com/Modernizr/grunt-modernizr
+// ----------------------------------------------------------------------------
 module.exports = {
-
-    custom: {
-        // [REQUIRED] Path to the build you're using for development.
-        "devFile" : "bower_components/modernizr/modernizr.js",
-
-        // [REQUIRED] Path to save out the built file.
-        "outputFile" : "assets/js/lib/modernizr-custom.js",
-
-        "extra" : {
-            "shiv" : true,
-            "printshiv" : true,
-            "load" : true,
-            "mq" : true,
-            "cssclasses" : true
-        },
-
-        // WE'RE UGLIFYING IN THE GRUNT STACK, SO AVOID THE OVERHEAD HERE
-        "uglify" : false,
-
-        "files" : {
-            "src": ['assets/**/*.scss','assets/**/*.js','!assets/js/modernizr-custom.js']
-        }
+  // Generate a custom Modernizr build based on checks found in our Sass & JS
+  custom: {
+    "uglify": false,
+    "extra": {
+      "shiv": false,
+      "printshiv": false,
+      "load": true,
+      "mq": true,
+      "cssclasses": true
+    },
+    "devFile": "bower_components/modernizr/modernizr.js",
+    "outputFile": "<%= siteInfo.assets_path %>/<%= siteInfo.js_dir %>/lib/modernizr-custom.js",
+    "files": {
+      "src": [
+        '<%= siteInfo.assets_path %>/<%= siteInfo.sass_dir %>/**/*.scss',
+        '<%= siteInfo.assets_path %>/<%= siteInfo.js_dir %>/**/*.js',
+        '!<%= siteInfo.assets_path %>/<%= siteInfo.js_dir %>/lib/modernizr-custom.js'
+      ]
     }
+  }
 };

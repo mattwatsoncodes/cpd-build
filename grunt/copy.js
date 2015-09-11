@@ -1,10 +1,10 @@
+// Copy Task - https://github.com/gruntjs/grunt-contrib-copy
+// ----------------------------------------------------------------------------
 module.exports = {
-
-    // Leaving here in case any copying is required as the build evolves
-    // name: {
-    //     expand: true,
-    //     cwd: 'path/to/files/',
-    //     src: ['filename.js'],
-    //     dest: '<%= wpInfo.wp_content %>/themes/<%= wpInfo.wp_theme_name %>/path/'
-    // }
+  // copy: {
+  //   expand: true,
+  //   cwd: 'path/to/files/',
+  //   src: ['filename'],
+  //   dest: '<%= wpInfo.wp_content %>/themes/<%= wpInfo.theme_name %>/path/'
+  // }
 };

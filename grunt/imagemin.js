@@ -1,10 +1,13 @@
+// Imagemin Task - https://github.com/gruntjs/grunt-contrib-imagemin
+// ----------------------------------------------------------------------------
 module.exports = {
-    images: {
-      files: [{
-        expand: true,
-        cwd: 'assets/img/',
-        src: ['**/*.{png,jpg,svg,gif}'],
-        dest: '<%= wpInfo.wp_content %>/themes/<%= wpInfo.wp_theme_name %>/img/'
-      }]
-    }
+  // Place minified versions of the image assets in the theme
+  images: {
+    files: [ {
+      expand: true,
+      cwd: '<%= siteInfo.assets_path %>/<%= siteInfo.img_dir %>',
+      src: [ '**/*.{png,jpg,svg,gif}' ],
+      dest: '<%= wpInfo.wp_content %>/themes/<%= wpInfo.theme_name %>/<%= wpInfo.img_dir %>'
+    } ]
+  }
 };

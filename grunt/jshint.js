@@ -1,26 +1,22 @@
+// JSHint Task - https://github.com/gruntjs/grunt-contrib-jshint
+// ----------------------------------------------------------------------------
 module.exports = {
-
-    // CHECKING AFTER CONCAT/UGLIFY MAY LEAD TO GREY HAIR
+  options: {
+    // JSHint config options
+    jshintrc: 'grunt/config/jshintrc.json',
+    // Output the results to file
+    reporterOutput: '<%= siteInfo.reports_path %>/jshint.txt',
+    reporter: require( 'jshint-stylish' ),
+  },
+  // Lint our Javascript
+  scripts: {
     options: {
-        globals: {
-            jQuery: true,
-            console: true,
-            module: true
-        },
-        reporter: require('jshint-stylish'),
+      // Continue the build regardless of JSHint errors
+      force: true
     },
-    before: {
-        options: {
-            force: true,
-            reporterOutput: 'reports/jshint-report-before.txt'
-        },
-        src: ['assets/js/**/*.js', '!js/modernizr-custom.js']
-    },
-    after: {
-        options: {
-            force: true,
-            reporterOutput: 'reports/jshint-report-after.txt'
-        },
-        src: ['<%= wpInfo.wp_content %>/themes/<%= wpInfo.wp_theme_name %>/js/**/*.js']
-    },
+    src: [
+      '<%= siteInfo.assets_path %>/<%= siteInfo.js_dir %>/**/*.js',
+      '!<%= siteInfo.assets_path %>/<%= siteInfo.js_dir %>/lib/modernizr-custom.js'
+    ]
+  }
 };

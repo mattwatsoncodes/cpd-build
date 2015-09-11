@@ -3,13 +3,22 @@
     "default",
     "watch"
   ],
-  "prefix": [
-    "autoprefixer"
+  "docs": [
+    "jsdoc",
+    "phpdoc:all",
+    "sassdoc",
+    "notify:docs"
   ],
-  "scripts": [
+  "lint": [
     "jshint",
-    "concat",
-    "uglify",
-    "clean"
+    "phplint:all",
+    "scsslint",
+    "notify:linting"
+  ],
+  "respimages": [
+    "responsive_images"
+  ],
+  "spritesmith": [
+    "sprite"
   ]
 }

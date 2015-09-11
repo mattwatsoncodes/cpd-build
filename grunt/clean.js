@@ -1,6 +1,10 @@
+// Clean Task - https://github.com/gruntjs/grunt-contrib-clean
+// ----------------------------------------------------------------------------
 module.exports = {
-    scripts: [
-        '<%= wpInfo.wp_content %>/themes/<%= wpInfo.wp_theme_name %>/js/*.js',
-        '!<%= wpInfo.wp_content %>/themes/<%= wpInfo.wp_theme_name %>/js/*.min.js'
+  // Remove the temporary JS files created by the concat task
+  scripts: {
+    src: [
+      '<%= siteInfo.assets_path %>/<%= siteInfo.js_dir %>/*.tmp.js'
     ]
+  }
 };

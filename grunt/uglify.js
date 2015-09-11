@@ -1,27 +1,30 @@
+// Uglify Task - https://github.com/gruntjs/grunt-contrib-uglify
+// ----------------------------------------------------------------------------
 module.exports = {
-
-    options: {
-        banner: '/*! <%= package.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
-        mangle: false
-    },
-    header: {
-        files: {
-            '<%= wpInfo.wp_content %>/themes/<%= wpInfo.wp_theme_name %>/js/header.min.js': ['<%= concat.header.dest %>']
-        }
-    },
-    footer: {
-        files: {
-            '<%= wpInfo.wp_content %>/themes/<%= wpInfo.wp_theme_name %>/js/footer.min.js': ['<%= concat.footer.dest %>']
-        }
-    },
-    customise_control: {
-        files: {
-            '<%= wpInfo.wp_content %>/themes/<%= wpInfo.wp_theme_name %>/js/color-scheme-control.min.js': ['assets/js/color-scheme-control.js']
-        }
-    },
-    customise_preview: {
-        files: {
-            '<%= wpInfo.wp_content %>/themes/<%= wpInfo.wp_theme_name %>/js/customize-preview.min.js': ['assets/js/customize-preview.js']
-        }
+  // Uglify all of our JS assets
+  options: {
+    banner: '/*! <%= package.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+    // Turning off mangling keeps the original code intact, reducing errors
+    mangle: false,
+    // Generate a sourcemap for each JS file
+    sourceMap: true
+  },
+  // Header JS
+  header: {
+    files: {
+      '<%= wpInfo.wp_content %>/themes/<%= wpInfo.theme_name %>/<%= wpInfo.js_dir %>/header.min.js': [ '<%= concat.header.dest %>' ]
     }
+  },
+  // Header JS for IE
+  header_ie: {
+    files: {
+      '<%= wpInfo.wp_content %>/themes/<%= wpInfo.theme_name %>/<%= wpInfo.js_dir %>/header_ie.min.js': [ '<%= concat.header_ie.dest %>' ]
+    }
+  },
+  // Footer JS
+  footer: {
+    files: {
+      '<%= wpInfo.wp_content %>/themes/<%= wpInfo.theme_name %>/<%= wpInfo.js_dir %>/footer.min.js': [ '<%= concat.footer.dest %>' ]
+    }
+  }
 };
