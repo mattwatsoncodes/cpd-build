@@ -1,3 +1,6 @@
 [submodule "Aspire_CPD_Theme"]
 	path = htdocs/wp-content/themes/aspire-cpd
 	url = git@github.com:mkdo/aspire-cpd.git
+[submodule "htdocs/wp-content/themes/aspire-cpd"]
+	path = htdocs/wp-content/themes/aspire-cpd
+	url = git@github.com:mkdo/aspire-cpd.git
