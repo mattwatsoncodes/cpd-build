@@ -26,7 +26,7 @@ module.exports = function( grunt ) {
         assets_path: 'assets', // Assets path relative to the project root - NO trailing slash
         img_dir: 'img', // Image assets directory
         js_dir: 'js', // Javascript assets directory
-        sass_dir: 'sass', // Sass assets directory
+        sass_dir: 'scss', // Sass assets directory
         css_dir: 'css', // CSS assets directory
         fonts_dir: 'fonts', // Font assets directory
         sass_file: 'site' // Name of your main Sass file and consequent CSS file
