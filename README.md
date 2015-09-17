@@ -1,4 +1,4 @@
-# CPD Theme Build
+# Aspire CPD Theme Build
 
 This is the soloution for building and compiling the [CPD Theme](https://github.com/mkdo/cpd-theme).
 
