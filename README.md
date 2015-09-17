@@ -1,4 +1,4 @@
-# Continuing Professional Development Theme Build
+# CPD Theme Build
 
 This is the soloution for building and compiling the [CPD Theme](https://github.com/mkdo/cpd-theme).
 
