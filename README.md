@@ -1,4 +1,5 @@
-Continuing Professional Development Theme
-========================================
+# Continuing Professional Development Theme Build
 
-Notes to follow...
+This is the build soloution for compiling the [CPD Theme](https://github.com/mkdo/cpd-theme).
+
+For the plugin itself and all related documentation go to the the [Aspire CPD plugin page](https://github.com/mkdo/cpd).
