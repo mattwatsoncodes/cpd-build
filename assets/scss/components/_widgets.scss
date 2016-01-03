@@ -114,6 +114,10 @@
     margin-bottom: 0;
   }
 
+  & > p {
+    padding: 12px 10px;
+  }
+
   &.widget_calendar caption {
     margin-bottom: 10px;
   }
